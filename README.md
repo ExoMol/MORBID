@@ -10,7 +10,7 @@ To compile
       
 To run:
      
-      ./morbid.x <input > output 
+      ./morbid <input > output 
       
 
 Some examples of MORBID input files can be found in 'molecules'. 
