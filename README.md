@@ -1,7 +1,22 @@
 # MORBID
- Calculation of rovibrational energies for a triatomic molecule in an isolated electronic state
+ [Prof. Per Jensen](https://www.uni-wuppertal.de/de/news/detail/bergische-universitaet-trauert-um-prof-per-jensen/)'s Fortran program 
+ for calculation of rovibrational energies for a triatomic molecule in an isolated electronic state
+
+For details see and cite [Per Jensen, J. Molec. Spectrosc., 128, 478  (1988))[https://doi.org/10.1016/0022-2852(88)90164-6]. 
+
+To compile 
+      
+      gfortran -mcmodel=medium -o morbid *.f
+      
+To run:
+     
+      ./morbid.x <input > output 
+      
+
+Some examples of MORBID input files can be found in 'molecules'. 
 
 
+------------------------
 Explanations:
 
 The calculations are done for one J value at a time.
