@@ -1,0 +1,808 @@
+1
+     MM      MM     OOOOOO    RRRRRRRR    BBBBBBBB       IIIIII    DDDDDDDD         11   
+     MM      MM     000000    RRRRRRRR    BBBBBBBB       IIIIII    DDDDDDDD         11   
+     MMMM  MMMM   OO      OO  RR      RR  BB      BB       II      DD      DD     1111   
+     MMMM  MMMM   OO      OO  RR      RR  BB      BB       II      DD      DD     1111   
+     MM  MM  MM   OO      OO  RR      RR  BB      BB       II      DD      DD       11   
+     MM  MM  MM   OO      OO  RR      RR  BB      BB       II      DD      DD       11   
+     MM      MM   OO      OO  RRRRRRRR    BBBBBBBB         II      DD      DD       11   
+     MM      MM   OO      OO  RRRRRRRR    BBBBBBBB         II      DD      DD       11   
+     MM      MM   OO      OO  RR  RR      BB      BB       II      DD      DD       11   
+     MM      MM   OO      OO  RR  RR      BB      BB       II      DD      DD       11   
+     MM      MM   OO      OO  RR    RR    BB      BB       II      DD      DD       11   
+     MM      MM   OO      OO  RR    RR    BB      BB       II      DD      DD       11   
+     MM      MM     OOOOOO    RR      RR  BBBBBBBB       IIIIII    DDDDDDDD       111111 
+     MM      MM     OOOOOO    RR      RR  BBBBBBBB       IIIIII    DDDDDDDD       111111 
+ 
+                                                           ZZ            
+                                                          ZZZZ           
+                                                         / ZZ            
+                                                       / R               
+                                                     /    32             
+                                    R              /)  ___               
+                            XX       12       YY /   ) RHO               
+                           XXXX- - - - - - - YYYY-----)------            
+                            XX                YY                         
+
+ 
+
+                   MORSE OSCILLATOR/RIGID BENDER INTERNAL DYNAMICS 
+
+                    A PROGRAM TO CALCULATE THE ROTATION-VIBRATION
+                    ENERGY LEVELS OF A TRIATOMIC MOLECULE AFTER
+                    THE MORBID SCHEME OF PER JENSEN.
+
+     PROGRAM DESIGNED AND WRITTEN BY :-
+
+
+                                  PER JENSEN
+  DEPARTMENT OF CHEMISTRY,                      MAX PLANCK INSTITUTE OF PHYSICS AND 
+  AARHUS UNIVERSITY,                                                         ASTROPHYSICS,
+  LANGELANDSGADE 140,                           INSTITUTE OF ASTROPHYSICS,
+  DK-8000 AARHUS C,                             KARL-SCHWARZSCHILD-STRASSE 1,
+  DENMARK                                       D-8046 GARCHING BEI MUENCHEN,
+                                                WEST GERMANY
+ 
+
+            PARTICULAR HELP WAS GIVEN BY:-
+
+                 R. BEARDSWORTH, P.R. BUNKER, W.P. KRAEMER,
+                 REDUCEII, AND V. SPIRKO.
+1MORBID.INP.INF  INPUT PROCESSING ROUTINE CALLED
+
+
+0************************************************************************************************************************************
+ ************************************************************************************************************************************
+ ************************************************************************************************************************************
+ ****************                                                                                                    ****************
+ ****************                                                                                                    ****************
+ ****************                   HCO+ POINTS FROM T. Hirano June 2012                                             ****************
+ ****************                   THE GROUND STATE                                                                 ****************
+ ****************                   ONE STATE MORBFIT                                                                ****************
+ ****************                                                                                                    ****************
+ ************************************************************************************************************************************
+ ************************************************************************************************************************************
+ ************************************************************************************************************************************
+ 
+0
+
+     ************ ATOMIC MASSES ************
+
+           ----------------------------------------------------------------
+           *       *                                                      *
+           * ISOT. *      M1/AMU            M2/AMU            M3/AMU      *
+           *       *                                                      *
+           ----------------------------------------------------------------
+           *    1  *      1.00782505       12.00000000       15.99491460  *
+           *    2  *      2.01410178       12.00000000       15.99491460  *
+           ----------------------------------------------------------------
+0
+
+     ************ QUANTUM NUMBER LIMITS ************
+
+           ---------------------------------------------------------------------------------------------------
+           *       *                                                                                         *
+           * ISOT. *       JMAX             V2MAX             MBASIS            LSTYP1            LSTYP2     *
+           *       *                                                                                         *
+           ---------------------------------------------------------------------------------------------------
+           *    1  *          5                12                12                12                 0      *
+           *    2  *          5                12                12                12                 0      *
+           ---------------------------------------------------------------------------------------------------
+0     ************ BENDING ENERGY EXPANSION COEFFICIENTS (CM-1) ************
+
+                    RHOE/DEG =         0.00000
+                    FA1      =     18276.30000   FA2      =      1652.49000
+                    FA3      =     23223.58000   FA4      =         0.00000
+                    FA5      =         0.00000   FA6      =         0.00000
+                    FA7      =         0.00000   FA8      =         0.00000
+0     ************ MOLECULAR PARAMETERS ************
+
+
+0                     RE12 =  1.092520 ANGSTROM,   RE32 =  1.106590 ANGSTROM
+
+0                     A1   =  1.9830 ANGSTROM-1,   A3   =  2.3930 ANGSTROM-1
+
+0     ************ POTENTIAL ENERGY EXPANSION COEFFICIENTS (CM-1) ************
+
+
+0                    F1A1    =     -4882.73000   F1A3    =    -11765.70000
+0                    F2A1    =         0.00000   F2A3    =    -85615.88000
+0                    F3A1    =         0.00000   F3A3    =    595945.40000
+0                    F4A1    =         0.00000   F4A3    =         0.00000
+0                    F11     =     34471.00000   F33     =     96920.40000
+0                    F1A11   =     -1103.41000   F1A33   =         0.00000
+0                    F2A11   =    -58867.18000   F2A33   =         0.00000
+0                    F3A11   =         0.00000   F3A33   =         0.00000
+0                    F13     =     -2280.17000
+0                    F1A13   =      5503.33000
+0                    F2A13   =         0.00000
+0                    F3A13   =         0.00000
+0                    F111    =       858.68000   F333    =       446.10700
+0                    F1A111  =    -45257.43000   F1A333  =         0.00000
+0                    F2A111  =         0.00000   F2A333  =         0.00000
+0                    F113    =         0.00000   F133    =      -964.50100
+0                    F1A113  =         0.00000   F1A133  =         0.00000
+0                    F2A113  =         0.00000   F2A133  =         0.00000
+0                    F1111   =         0.00000   F3333   =         0.00000
+0                    F1A1111 =         0.00000   F1A3333 =         0.00000
+0                    F1113   =         0.00000   F1333   =         0.00000
+0                    F1A1113 =         0.00000   F1A1333 =         0.00000
+0                    F1133   =         0.00000
+0                    F1A1133 =         0.00000
+0     ************ POTENTIAL EXPANSION TYPE ************
+
+0                  V0TYPE  =     1 (V0TYPE = 1: EXPANSION IN 1 - DCOS(RHO))
+                                   (V0TYPE = 2: EXPANSION IN DCOS(RHOE) - DCOS(RHO))
+
+0     ************ NUMERICAL INTEGRATION PARAMETERS ************
+
+0                  RHOMAX  =    1.20000 RADIANS
+0                  ETRIAL  = 1000.00000
+0                  P(N-1)  =  0.10000E-31
+0                  NSTINT  =  1000 (NUMBER OF INTEGRATION STEPS)
+0                  NSERIN  =    40 (POINTS IN SERIES SOLUTION REGION)
+0                  P       =     2 (TERMS IN POLYNOMIAL APPROXIMATION TO THE SCHROEDINGER EQUATION)
+0                  Q       =     9 (TERMS IN POLYNOMIAL APPROXIMATION TO THE BENDING WAVEFUNCTION)
+
+
+0     ************ PROGRAM LIMITS ************
+
+0                  NATTS   =    30 (NUMBER OF ATTEMPTS ALLOWED IN FINDING RHOE)
+0                  NSTNIN  =    30 (NUMBER OF ITERATIONS ALLOWED IN THE NUMERICAL INTEGRATION)
+
+0     ************ PROGRAM THRESHOLDS ************
+
+0                  THRSH1  =   0.10E-05 (THRESHOLD ON DERIVATIVE IN FINDING RHOE)
+0                  THRSH2  =   0.10E-05 (STOPPING THRESHOLD IN FINDING RHOE)
+0                  THRSH3  =   0.10E+21 (UPPER LIMIT FOR WAVEFUNCTION VALUE IN OUTWARD INTEGRATION)
+0                  THRSH4  =   0.10E+00 (ERROR LIMIT IN THE NUMERICAL DIFFERENTIATION)
+0                  THRSH5  =   0.10E-03 (STOPPING THRESHOLD ON ENERGY IN NUMEROV-COOLEY INTEGRATION)
+
+0     ************ PROGRAM FLAGS ************
+
+0                  ITEST   =     0 (CONTROLS TEST OUTPUT)
+0                  PRTINT  =   100 (NUMBER OF STEPS BETWEEN REPORTS OF F1, F2, I0 , AND V0)
+
+0MORBID.INP.INF  END OF INPUT DATA
+
+
+ EXPP, ABIP, TOTAL INPUT:         178         149         327
+
+0     ************ PARAMETERS TO BE VARIED IN LSQ FIT ************
+
+
+                   2.    RE12  
+                   3.    RE32  
+                   6.    FA1   
+                   7.    FA2   
+                  14.    F1A1  
+                  18.    F1A3  
+                  22.    F11   
+                  23.    F1A11 
+                  26.    F33   
+                  30.    F13   
+                  34.    F111  
+                  37.    F333  
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+  MORBID.NMI.ERR   NO TURNING POINT FOUND IN OUTWARD INTEGRATION
+
+1          ISOT. J SYM. IDENT.   NUOBS      NUCALC     OBS-CALC    WEIGHT
+
+UPP.STATE:   1   1  A"   1
+LOW.STATE:       0  A'   1     2.97501     2.97453     0.00048     2.06312
+UPP.STATE:   1   2  A'   1
+LOW.STATE:       0  A'   1     8.92496     8.92353     0.00143     2.06312
+UPP.STATE:   1   3  A"   1
+LOW.STATE:       0  A'   1    17.84972    17.84686     0.00286     2.06312
+UPP.STATE:   1   4  A'   1
+LOW.STATE:       0  A'   1    29.74910    29.74433     0.00477     2.06312
+UPP.STATE:   1   5  A"   1
+LOW.STATE:       0  A'   1    44.62282    44.61567     0.00715     2.06312
+UPP.STATE:   1   1  A"   2
+LOW.STATE:       0  A'   1   831.20452   822.02932     9.17520     0.20631
+UPP.STATE:   1   2  A'   2
+LOW.STATE:       1  A"   2     5.94686     5.93757     0.00930     2.06312
+UPP.STATE:   1   3  A"   2
+LOW.STATE:       1  A"   2    14.86699    14.84375     0.02324     2.06312
+UPP.STATE:   1   4  A'   2
+LOW.STATE:       1  A"   2    26.76018    26.71835     0.04183     2.06312
+UPP.STATE:   1   5  A"   2
+LOW.STATE:       1  A"   2    41.62616    41.56110     0.06506     2.06312
+UPP.STATE:   1   1  A'   1
+LOW.STATE:       0  A'   1   831.21838   822.04111     9.17727     0.20631
+UPP.STATE:   1   2  A"   1
+LOW.STATE:       1  A'   1     5.97511     5.96115     0.01396     2.06312
+UPP.STATE:   1   3  A'   1
+LOW.STATE:       1  A'   1    14.93761    14.90270     0.03491     2.06312
+UPP.STATE:   1   4  A"   1
+LOW.STATE:       1  A'   1    26.88729    26.82446     0.06283     2.06312
+UPP.STATE:   1   5  A'   1
+LOW.STATE:       1  A'   1    41.82388    41.72614     0.09774     2.06312
+UPP.STATE:   1   0  A'   2
+LOW.STATE:       0  A'   1  1638.61900  1650.70905   -12.09005     0.20631
+UPP.STATE:   1   1  A"   3
+LOW.STATE:       0  A'   2     2.98659     2.98510     0.00149     2.06312
+UPP.STATE:   1   2  A'   3
+LOW.STATE:       0  A'   2     8.95961     5.88638     3.07323     2.06312
+UPP.STATE:   1   3  A"   3
+LOW.STATE:       0  A'   2    17.91879    14.82429     3.09450     2.06312
+UPP.STATE:   1   4  A'   3
+LOW.STATE:       0  A'   2    29.86367    26.74027     3.12341     2.06312
+UPP.STATE:   1   5  A"   3
+LOW.STATE:       0  A'   2    44.79367    41.63331     3.16036     2.06312
+UPP.STATE:   1   2  A'   4
+LOW.STATE:       0  A'   1  1654.36670  1659.66449    -5.29779     0.20631
+UPP.STATE:   1   3  A"   4
+LOW.STATE:       2  A'   4     8.95712     8.95582     0.00130     2.06312
+UPP.STATE:   1   4  A'   4
+LOW.STATE:       2  A'   4    20.89996    20.89750     0.00246     2.06312
+UPP.STATE:   1   5  A"   4
+LOW.STATE:       2  A'   4    35.82853    35.82550     0.00303     2.06312
+UPP.STATE:   1   2  A"   2
+LOW.STATE:       0  A'   1  1654.36623  1656.59564    -2.22940     0.20631
+UPP.STATE:   1   3  A'   2
+LOW.STATE:       2  A"   2     8.95559     8.93870     0.01690     2.06312
+UPP.STATE:   1   4  A"   2
+LOW.STATE:       2  A"   2    20.89612    20.85664     0.03948     2.06312
+UPP.STATE:   1   5  A'   2
+LOW.STATE:       2  A"   2    35.82136    35.75355     0.06781     2.06312
+UPP.STATE:   1   0  A'   3
+LOW.STATE:       0  A'   1  2183.94984  2179.88438     4.06546     0.20631
+UPP.STATE:   1   1  A"   4
+LOW.STATE:       0  A'   3     2.95536     2.95497     0.00039     2.06312
+UPP.STATE:   1   2  A'   5
+LOW.STATE:       0  A'   3     8.86601     8.86483     0.00118     2.06312
+UPP.STATE:   1   3  A"   5
+LOW.STATE:       0  A'   3    17.73182    17.72946     0.00235     2.06312
+UPP.STATE:   1   4  A'   5
+LOW.STATE:       0  A'   3    29.55258    29.54867     0.00392     2.06312
+UPP.STATE:   1   5  A"   5
+LOW.STATE:       0  A'   3    44.32805    44.32217     0.00587     2.06312
+UPP.STATE:   1   1  A"   5
+LOW.STATE:       0  A'   1  2459.39920  2462.38915    -2.98995     0.20631
+UPP.STATE:   1   2  A'   6
+LOW.STATE:       1  A"   5     5.98080     5.94085     0.03995     2.06312
+UPP.STATE:   1   3  A"   6
+LOW.STATE:       1  A"   5    14.95200    14.85190     0.10010     2.06312
+UPP.STATE:   1   4  A'   6
+LOW.STATE:       1  A"   5    26.91360    26.73289     0.18071     2.06312
+UPP.STATE:   1   5  A"   6
+LOW.STATE:       1  A"   5    41.86560    41.58347     0.28213     2.06312
+UPP.STATE:   1   3  A"   7
+LOW.STATE:       0  A'   1  2488.42680  2498.44409   -10.01729     0.20631
+UPP.STATE:   1   4  A'   7
+LOW.STATE:       3  A"   7    11.96480    11.93684     0.02796     2.06312
+UPP.STATE:   1   5  A"   7
+LOW.STATE:       3  A"   7    26.92080    26.85750     0.06330     2.06312
+UPP.STATE:   1   1  A"   6
+LOW.STATE:       0  A'   1  3015.28854  3004.67673    10.61181     0.20631
+UPP.STATE:   1   2  A'   7
+LOW.STATE:       1  A"   6     5.90570     5.89624     0.00946     2.06312
+UPP.STATE:   1   3  A"   8
+LOW.STATE:       1  A"   6    14.76408    14.74042     0.02365     2.06312
+UPP.STATE:   1   4  A'   8
+LOW.STATE:       1  A"   6    26.57493    26.53236     0.04256     2.06312
+UPP.STATE:   1   5  A"   8
+LOW.STATE:       1  A"   6    41.33798    41.27179     0.06619     2.06312
+UPP.STATE:   1   1  A'   3
+LOW.STATE:       0  A'   1  3015.29601  3004.68926    10.60675     0.20631
+UPP.STATE:   1   2  A"   4
+LOW.STATE:       1  A'   3     5.93557     5.92130     0.01427     2.06312
+UPP.STATE:   1   3  A'   5
+LOW.STATE:       1  A'   3    14.83875    14.80307     0.03568     2.06312
+UPP.STATE:   1   4  A"   5
+LOW.STATE:       1  A'   3    26.70935    26.64512     0.06422     2.06312
+UPP.STATE:   1   5  A'   5
+LOW.STATE:       1  A'   3    41.54709    41.44718     0.09991     2.06312
+UPP.STATE:   1   0  A'   4
+LOW.STATE:       0  A'   1  3088.73899  3068.36935    20.36964     0.20631
+UPP.STATE:   1   1  A"   7
+LOW.STATE:       0  A'   4     2.95140     2.95023     0.00117     2.06312
+UPP.STATE:   1   2  A'   8
+LOW.STATE:       0  A'   4     8.85413     8.85062     0.00351     2.06312
+UPP.STATE:   1   3  A"   9
+LOW.STATE:       0  A'   4    17.70807    17.70105     0.00702     2.06312
+UPP.STATE:   1   4  A'   9
+LOW.STATE:       0  A'   4    29.51301    29.50130     0.01171     2.06312
+UPP.STATE:   1   5  A"   9
+LOW.STATE:       0  A'   4    44.26870    44.25113     0.01757     2.06312
+UPP.STATE:   1   1  A"  10
+LOW.STATE:       0  A'   1  3895.81702  3854.32517    41.49185     0.20631
+UPP.STATE:   1   2  A'  13
+LOW.STATE:       1  A"  10     5.90239     5.90676    -0.00436     2.06312
+UPP.STATE:   1   3  A"  14
+LOW.STATE:       1  A"  10    14.75582    14.76674    -0.01092     2.06312
+UPP.STATE:   1   4  A'  15
+LOW.STATE:       1  A"  10    26.56007    26.57974    -0.01967     2.06312
+UPP.STATE:   1   5  A"  15
+LOW.STATE:       1  A"  10    41.31489    41.34551    -0.03062     2.06312
+UPP.STATE:   1   1  A'   4
+LOW.STATE:       0  A'   1  3895.83012  3854.33224    41.49788     0.20631
+UPP.STATE:   1   2  A"   7
+LOW.STATE:       1  A'   4     5.92952     5.92091     0.00861     2.06312
+UPP.STATE:   1   3  A'   8
+LOW.STATE:       1  A'   4    14.82362    14.80211     0.02151     2.06312
+UPP.STATE:   1   4  A"   9
+LOW.STATE:       1  A'   4    26.68211    26.64340     0.03871     2.06312
+UPP.STATE:   1   5  A'   9
+LOW.STATE:       1  A'   4    41.50471    41.44453     0.06018     2.06312
+UPP.STATE:   1   0  A'   7
+LOW.STATE:       0  A'   1  4347.78610  4339.06087     8.72523     0.20631
+UPP.STATE:   1   1  A"  12
+LOW.STATE:       0  A'   7     2.93555     2.93529     0.00026     2.06312
+UPP.STATE:   1   2  A'  15
+LOW.STATE:       0  A'   7     8.80659     8.80580     0.00079     2.06312
+UPP.STATE:   1   3  A"  17
+LOW.STATE:       0  A'   7    17.61298    17.61140     0.00159     2.06312
+UPP.STATE:   1   4  A'  18
+LOW.STATE:       0  A'   7    29.35455    29.35188     0.00267     2.06312
+UPP.STATE:   1   5  A"  19
+LOW.STATE:       0  A'   7    44.03104    44.02700     0.00404     2.06312
+UPP.STATE:   1   0  A'   8
+LOW.STATE:       0  A'   1  4679.37300  4646.61181    32.76119     0.20631
+UPP.STATE:   1   1  A"  13
+LOW.STATE:       0  A'   8     2.96536     2.91440     0.05095     2.06312
+UPP.STATE:   1   2  A'  17
+LOW.STATE:       0  A'   8     8.89593     8.74505     0.15088     2.06312
+UPP.STATE:   1   3  A"  19
+LOW.STATE:       0  A'   8    17.79145    17.49538     0.29607     2.06312
+UPP.STATE:   1   4  A'  20
+LOW.STATE:       0  A'   8    29.65149    29.17006     0.48144     2.06312
+UPP.STATE:   1   5  A"  21
+LOW.STATE:       0  A'   8    44.47551    43.77451     0.70100     2.06312
+UPP.STATE:   1   2  A'  16
+LOW.STATE:       0  A'   1  4694.51696  4649.27062    45.24635     0.20631
+UPP.STATE:   1   3  A"  18
+LOW.STATE:       2  A'  16     8.89788     8.85052     0.04736     2.06312
+UPP.STATE:   1   4  A'  19
+LOW.STATE:       2  A'  16    20.76169    20.64920     0.11248     2.06312
+UPP.STATE:   1   5  A"  20
+LOW.STATE:       2  A'  16    35.59141    35.39426     0.19714     2.06312
+UPP.STATE:   1   2  A"   9
+LOW.STATE:       0  A'   1  4694.51650  4649.27101    45.24549     0.20631
+UPP.STATE:   1   3  A'  11
+LOW.STATE:       2  A"   9     8.89638     8.85210     0.04428     2.06312
+UPP.STATE:   1   4  A"  12
+LOW.STATE:       2  A"   9    20.75794    20.65479     0.10316     2.06312
+UPP.STATE:   1   5  A'  13
+LOW.STATE:       2  A"   9    35.58445    35.40795     0.17650     2.06312
+UPP.STATE:   1   0  A'  10
+LOW.STATE:       0  A'   1  5247.08633  5218.21591    28.87042     0.20631
+UPP.STATE:   1   1  A"  17
+LOW.STATE:       0  A'  10     2.93301     2.93181     0.00120     2.06312
+UPP.STATE:   1   2  A'  22
+LOW.STATE:       0  A'  10     8.79897     8.79536     0.00361     2.06312
+UPP.STATE:   1   3  A"  25
+LOW.STATE:       0  A'  10    17.59774    17.59052     0.00722     2.06312
+UPP.STATE:   1   4  A'  27
+LOW.STATE:       0  A'  10    29.32913    29.31710     0.01203     2.06312
+UPP.STATE:   1   5  A"  28
+LOW.STATE:       0  A'  10    43.99287    43.97483     0.01804     2.06312
+UPP.STATE:   1   1  A"  22
+LOW.STATE:       0  A'   1  6054.56512  6002.31194    52.25317     0.20631
+UPP.STATE:   1   2  A'  29
+LOW.STATE:       1  A"  22     5.85841     5.93444    -0.07603     2.06312
+UPP.STATE:   1   3  A"  34
+LOW.STATE:       1  A"  22    14.64585    14.83205    -0.18619     2.06312
+UPP.STATE:   1   4  A'  37
+LOW.STATE:       1  A"  22    26.36211    26.68872    -0.32661     2.06312
+UPP.STATE:   1   5  A"  39
+LOW.STATE:       1  A"  22    41.00692    41.49998    -0.49306     2.06312
+UPP.STATE:   1   1  A'  10
+LOW.STATE:       0  A'   1  6054.57393  6002.31393    52.26000     0.20631
+UPP.STATE:   1   2  A"  17
+LOW.STATE:       1  A'  10     5.89365     5.93889    -0.04524     2.06312
+UPP.STATE:   1   3  A'  22
+LOW.STATE:       1  A'  10    14.73395    14.84425    -0.11031     2.06312
+UPP.STATE:   1   4  A"  25
+LOW.STATE:       1  A'  10    26.52067    26.71307    -0.19239     2.06312
+UPP.STATE:   1   5  A'  27
+LOW.STATE:       1  A'  10    41.25355    41.54198    -0.28843     2.06312
+UPP.STATE:   1   0  A'  13
+LOW.STATE:       0  A'   1  6078.68415  6016.31696    62.36719     0.20631
+UPP.STATE:   1   1  A"  23
+LOW.STATE:       0  A'  13     2.93039     2.92836     0.00203     2.06312
+UPP.STATE:   1   2  A'  30
+LOW.STATE:       0  A'  13     8.79110     8.78503     0.00607     2.06312
+UPP.STATE:   1   3  A"  35
+LOW.STATE:       0  A'  13    17.58200    17.56992     0.01208     2.06312
+UPP.STATE:   1   4  A'  38
+LOW.STATE:       0  A'  13    29.30292    29.28291     0.02001     2.06312
+UPP.STATE:   1   5  A"  40
+LOW.STATE:       0  A'  13    43.95359    43.92381     0.02978     2.06312
+UPP.STATE:   1   0  A'  19
+LOW.STATE:       0  A'   1  7385.94980  7352.49686    33.45294     0.20631
+UPP.STATE:   1   1  A"  35
+LOW.STATE:       0  A'  19     2.91452     2.91745    -0.00293     2.06312
+UPP.STATE:   1   2  A'  46
+LOW.STATE:       0  A'  19     8.74351     8.75229    -0.00879     2.06312
+UPP.STATE:   1   3  A"  55
+LOW.STATE:       0  A'  19    17.48683    17.50442    -0.01759     2.06312
+UPP.STATE:   1   4  A'  61
+LOW.STATE:       0  A'  19    29.14430    29.17366    -0.02936     2.06312
+UPP.STATE:   1   5  A"  66
+LOW.STATE:       0  A'  19    43.71567    47.15630    -3.44062     2.06312
+UPP.STATE:   2   1  A"   7
+LOW.STATE:       0  A'   4     2.38755     2.38196     0.00559     2.06312
+UPP.STATE:   2   2  A'   8
+LOW.STATE:       0  A'   4     7.16261     7.14582     0.01678     2.06312
+UPP.STATE:   2   3  A"   9
+LOW.STATE:       0  A'   4    14.32508    14.29150     0.03357     2.06312
+UPP.STATE:   2   4  A'   9
+LOW.STATE:       0  A'   4    23.87483    23.81885     0.05597     2.06312
+UPP.STATE:   2   5  A"   9
+LOW.STATE:       0  A'   4    35.81169    35.72769     0.08400     2.06312
+UPP.STATE:   2   1  A"   4
+LOW.STATE:       0  A'   3     2.38615     2.38627    -0.00012     2.06312
+UPP.STATE:   2   2  A'   5
+LOW.STATE:       0  A'   3     7.15841     7.15877    -0.00037     2.06312
+UPP.STATE:   2   3  A"   5
+LOW.STATE:       0  A'   3    14.31671    14.31742    -0.00071     2.06312
+UPP.STATE:   2   4  A'   5
+LOW.STATE:       0  A'   3    23.86093    23.86209    -0.00116     2.06312
+UPP.STATE:   2   5  A"   5
+LOW.STATE:       0  A'   3    35.79094    35.79261    -0.00167     2.06312
+UPP.STATE:   2   2  A"   6
+LOW.STATE:       1  A'   4     4.79921     4.71684     0.08236     2.06312
+UPP.STATE:   2   3  A'   7
+LOW.STATE:       1  A'   4    11.99790    11.80153     0.19638     2.06312
+UPP.STATE:   2   4  A"   8
+LOW.STATE:       1  A'   4    21.59595    21.26014     0.33582     2.06312
+UPP.STATE:   2   5  A'   8
+LOW.STATE:       1  A'   4    33.59317    33.09706     0.49611     2.06312
+UPP.STATE:   2   2  A'  12
+LOW.STATE:       1  A"  10     4.76179     4.76598    -0.00419     2.06312
+UPP.STATE:   2   3  A"  13
+LOW.STATE:       1  A"  10    11.90433    11.92320    -0.01887     2.06312
+UPP.STATE:   2   4  A'  14
+LOW.STATE:       1  A"  10    21.42746    21.47773    -0.05027     2.06312
+UPP.STATE:   2   5  A"  14
+LOW.STATE:       1  A"  10    33.33098    33.43425    -0.10326     2.06312
+UPP.STATE:   2   2  A"   1
+LOW.STATE:       1  A'   1     4.82691     4.81984     0.00707     2.06312
+UPP.STATE:   2   3  A'   1
+LOW.STATE:       1  A'   1    12.06715    12.04949     0.01766     2.06312
+UPP.STATE:   2   4  A"   1
+LOW.STATE:       1  A'   1    21.72060    21.68880     0.03180     2.06312
+UPP.STATE:   2   5  A'   1
+LOW.STATE:       1  A'   1    33.78705    33.73760     0.04946     2.06312
+UPP.STATE:   2   2  A'   2
+LOW.STATE:       1  A"   2     4.80411     4.80059     0.00352     2.06312
+UPP.STATE:   2   3  A"   2
+LOW.STATE:       1  A"   2    12.01017    12.00137     0.00880     2.06312
+UPP.STATE:   2   4  A'   2
+LOW.STATE:       1  A"   2    21.61803    21.60219     0.01584     2.06312
+UPP.STATE:   2   5  A"   2
+LOW.STATE:       1  A"   2    33.62751    33.60289     0.02462     2.06312
+UPP.STATE:   2   1  A"   3
+LOW.STATE:       0  A'   2     2.41447     2.41562    -0.00115     2.06312
+UPP.STATE:   2   2  A'   3
+LOW.STATE:       0  A'   2     7.24327     3.58562     3.65765     2.06312
+UPP.STATE:   2   3  A"   3
+LOW.STATE:       0  A'   2    14.48614    10.81847     3.66766     2.06312
+UPP.STATE:   2   4  A'   3
+LOW.STATE:       0  A'   2    24.14268    20.46154     3.68115     2.06312
+UPP.STATE:   2   5  A"   3
+LOW.STATE:       0  A'   2    36.21236    32.51420     3.69816     2.06312
+UPP.STATE:   2   3  A'   2
+LOW.STATE:       2  A"   2     7.24228     7.23331     0.00897     2.06312
+UPP.STATE:   2   4  A"   2
+LOW.STATE:       2  A"   2    16.89883    16.87750     0.02133     2.06312
+UPP.STATE:   2   5  A'   2
+LOW.STATE:       2  A"   2    28.96980    28.93239     0.03741     2.06312
+UPP.STATE:   2   3  A"   4
+LOW.STATE:       2  A'   4     7.24194     7.24711    -0.00517     2.06312
+UPP.STATE:   2   4  A'   4
+LOW.STATE:       2  A'   4    16.89765    16.91023    -0.01258     2.06312
+UPP.STATE:   2   5  A"   4
+LOW.STATE:       2  A'   4    28.96693    28.98959    -0.02266     2.06312
+UPP.STATE:   2   2  A"   3
+LOW.STATE:       1  A'   2     4.86507     4.85545     0.00963     2.06312
+UPP.STATE:   2   3  A'   3
+LOW.STATE:       1  A'   2    12.16248    12.13845     0.02403     2.06312
+UPP.STATE:   2   4  A"   3
+LOW.STATE:       1  A'   2    21.89197    21.84878     0.04319     2.06312
+UPP.STATE:   2   5  A'   3
+LOW.STATE:       1  A'   2    34.05321    33.98618     0.06703     2.06312
+UPP.STATE:   2   2  A'   6
+LOW.STATE:       1  A"   5     4.81872     4.81582     0.00290     2.06312
+UPP.STATE:   2   3  A"   6
+LOW.STATE:       1  A"   5    12.04659    12.03938     0.00721     2.06312
+UPP.STATE:   2   4  A'   6
+LOW.STATE:       1  A"   5    21.68338    21.67046     0.01292     2.06312
+UPP.STATE:   2   5  A"   6
+LOW.STATE:       1  A"   5    33.72876    33.70879     0.01997     2.06312
+UPP.STATE:   2   4  A"   4
+LOW.STATE:       3  A'   4     9.68017     9.66704     0.01312     2.06312
+UPP.STATE:   2   5  A'   4
+LOW.STATE:       3  A'   4    21.78026    21.75064     0.02962     2.06312
+UPP.STATE:   2   4  A'   7
+LOW.STATE:       3  A"   7     9.68017     9.66704     0.01313     2.06312
+UPP.STATE:   2   5  A"   7
+LOW.STATE:       3  A"   7    21.78027    21.75063     0.02964     2.06312
+UPP.STATE:   2   1  A"   8
+LOW.STATE:       0  A'   5     2.42773     2.42701     0.00072     2.06312
+UPP.STATE:   2   2  A'  10
+LOW.STATE:       0  A'   5     7.28288     7.28107     0.00181     2.06312
+UPP.STATE:   2   3  A"  11
+LOW.STATE:       0  A'   5    14.56479    14.56224     0.00255     2.06312
+UPP.STATE:   2   4  A'  11
+LOW.STATE:       0  A'   5    24.27249    22.25672     2.01577     2.06312
+UPP.STATE:   2   5  A"  11
+LOW.STATE:       0  A'   5    36.40470    34.36787     2.03683     2.06312
+UPP.STATE:   2   3  A'   6
+LOW.STATE:       2  A"   5     7.28274     7.27611     0.00664     2.06312
+UPP.STATE:   2   4  A"   6
+LOW.STATE:       2  A"   5    16.99397    16.97722     0.01675     2.06312
+UPP.STATE:   2   5  A'   6
+LOW.STATE:       2  A"   5    29.13444    29.10303     0.03141     2.06312
+UPP.STATE:   2   3  A"  10
+LOW.STATE:       2  A'   9     7.28165     7.27577     0.00588     2.06312
+UPP.STATE:   2   4  A'  10
+LOW.STATE:       2  A'   9    16.99014    16.97603     0.01411     2.06312
+UPP.STATE:   2   5  A"  10
+LOW.STATE:       2  A'   9    29.12516    29.10015     0.02500     2.06312
+UPP.STATE:   2   5  A'   7
+LOW.STATE:       4  A"   7    12.12905    12.11115     0.01790     2.06312
+
+      R1P         R3P         ALPP        R1M         R3M         ALPM     EABIO      ECLCABI        DELABI        WTABI
+
+    0.9940      1.1090      178.00      0.9940      1.1090      180.00     11.6166     11.9748     -0.3583       0.00412624
+    0.9940      1.1090      175.00      0.9940      1.1090      178.00     60.9869     62.8101     -1.8232       0.00412624
+    0.9940      1.1090      171.00      0.9940      1.1090      175.00    162.8149    167.0535     -4.2386       0.00412624
+    0.9940      1.1090      166.00      0.9940      1.1090      171.00    335.0487    341.4061     -6.3574       0.00412624
+    0.9940      1.1090      159.00      0.9940      1.1090      166.00    716.3543    723.3002     -6.9459       0.00412624
+    1.0440      1.0890      180.00      0.9940      1.1090      159.00  -2370.3139  -2388.4878     18.1739       0.00412624
+    1.0440      1.0890      178.00      1.0440      1.0890      180.00     11.7212     11.7798     -0.0586       0.00412624
+    1.0440      1.0890      175.00      1.0440      1.0890      178.00     61.5625     61.8623     -0.2998       0.00412624
+    1.0440      1.0890      171.00      1.0440      1.0890      175.00    164.2408    165.1109     -0.8700       0.00412624
+    1.0440      1.0890      166.00      1.0440      1.0890      171.00    337.7174    339.6781     -1.9607       0.00412624
+    1.0440      1.0890      159.00      1.0440      1.0890      166.00    721.1422    725.9363     -4.7940       0.00412624
+    1.0440      1.1090      180.00      1.0440      1.0890      159.00  -1461.5277  -1469.2125      7.6849       0.00412624
+    1.0440      1.1090      178.00      1.0440      1.1090      180.00     11.3680     11.4124     -0.0444       0.00412624
+    1.0440      1.1090      175.00      1.0440      1.1090      178.00     59.6918     59.8855     -0.1936       0.00412624
+    1.0440      1.1090      171.00      1.0440      1.1090      175.00    159.2698    159.4827     -0.2129       0.00412624
+    1.0440      1.1090      166.00      1.0440      1.1090      171.00    327.4744    326.8901      0.5843       0.00412624
+    1.0440      1.1090      159.00      1.0440      1.1090      166.00    699.3481    696.9083      2.4398       0.00412624
+    1.0440      1.1290      180.00      1.0440      1.1090      159.00   -985.5105   -982.5206     -2.9899       0.00412624
+    1.0440      1.1290      178.00      1.0440      1.1290      180.00     11.0017     11.0622     -0.0605       0.00412624
+    1.0440      1.1290      175.00      1.0440      1.1290      178.00     57.8211     58.0011     -0.1799       0.00412624
+    1.0440      1.1290      171.00      1.0440      1.1290      175.00    154.2595    154.1175      0.1420       0.00412624
+    1.0440      1.1290      166.00      1.0440      1.1290      171.00    317.2183    314.6998      2.5185       0.00412624
+    1.0440      1.1290      159.00      1.0440      1.1290      166.00    677.4493    669.2371      8.2122       0.00412624
+    1.0740      1.0590      180.00      1.0440      1.1290      159.00   -396.2580   -386.6561     -9.6019       0.00412624
+    1.0740      1.0590      178.00      1.0740      1.0590      180.00     12.0744     12.1293     -0.0548       0.00412624
+    1.0740      1.0590      175.00      1.0740      1.0590      178.00     63.3940     63.7803     -0.3863       0.00412624
+    1.0740      1.0590      171.00      1.0740      1.0590      175.00    169.1203    170.8518     -1.7314       0.00412624
+    1.0740      1.0590      166.00      1.0740      1.0590      171.00    347.5417    353.6886     -6.1469       0.00412624
+    1.0740      1.0590      159.00      1.0740      1.0590      166.00    741.5497    759.7789    -18.2292       0.00412624
+    1.0740      1.0890      180.00      1.0740      1.0590      159.00  -2557.9579  -2584.3174     26.3595       0.00412624
+    1.0740      1.0890      178.00      1.0740      1.0890      180.00     11.5642     11.5607      0.0036       0.00412624
+    1.0740      1.0890      175.00      1.0740      1.0890      178.00     60.6860     60.7187     -0.0327       0.00412624
+    1.0740      1.0890      171.00      1.0740      1.0890      175.00    161.8861    162.1190     -0.2329       0.00412624
+    1.0740      1.0890      166.00      1.0740      1.0890      171.00    332.7202    333.7941     -1.0740       0.00412624
+    1.0740      1.0890      159.00      1.0740      1.0890      166.00    709.9443    714.5446     -4.6003       0.00412624
+    1.0740      1.1090      180.00      1.0740      1.0890      159.00  -1448.7076  -1454.5381      5.8306       0.00412624
+    1.0740      1.1090      178.00      1.0740      1.1090      180.00     11.2110     11.2037      0.0074       0.00412624
+    1.0740      1.1090      175.00      1.0740      1.1090      178.00     58.8808     58.7965      0.0843       0.00412624
+    1.0740      1.1090      171.00      1.0740      1.1090      175.00    157.0459    156.6359      0.4100       0.00412624
+    1.0740      1.1090      166.00      1.0740      1.1090      171.00    322.7650    321.3028      1.4622       0.00412624
+    1.0740      1.1090      159.00      1.0740      1.1090      166.00    688.7519    686.1429      2.6090       0.00412624
+    1.0740      1.1290      180.00      1.0740      1.1090      159.00   -973.6977   -968.9253     -4.7724       0.00412624
+    1.0740      1.1290      178.00      1.0740      1.1290      180.00     10.8709     10.8633      0.0076       0.00412624
+    1.0740      1.1290      175.00      1.0740      1.1290      178.00     57.0493     56.9640      0.0853       0.00412624
+    1.0740      1.1290      171.00      1.0740      1.1290      175.00    152.1795    151.4090      0.7705       0.00412624
+    1.0740      1.1290      166.00      1.0740      1.1290      171.00    312.7836    309.3953      3.3883       0.00412624
+    1.0740      1.1290      159.00      1.0740      1.1290      166.00    667.4680    659.0686      8.3994       0.00412624
+    1.0740      1.1590      180.00      1.0740      1.1290      159.00   -110.9852    -98.6940    -12.2912       0.00412624
+    1.0740      1.1590      178.00      1.0740      1.1590      180.00     10.3345     10.3825     -0.0479       0.00412624
+    1.0740      1.1590      175.00      1.0740      1.1590      178.00     54.2891     54.3747     -0.0856       0.00412624
+    1.0740      1.1590      171.00      1.0740      1.1590      175.00    144.8407    144.0231      0.8175       0.00412624
+    1.0740      1.1590      166.00      1.0740      1.1590      171.00    297.7266    292.5691      5.1575       0.00412624
+    1.0740      1.1590      159.00      1.0740      1.1590      166.00    635.3655    620.8107     14.5548       0.00412624
+    1.0940      1.0190      180.00      1.0740      1.1590      159.00   2723.3892   2738.0353    -14.6461       0.00412624
+    1.0940      1.0190      178.00      1.0940      1.0190      180.00     12.6238     12.8017     -0.1779       0.00412624
+    1.0940      1.0190      175.00      1.0940      1.0190      178.00     66.2589     67.4232     -1.1644       0.00412624
+    1.0940      1.0190      171.00      1.0940      1.0190      175.00    176.7077    181.4031     -4.6954       0.00412624
+    1.0940      1.0190      166.00      1.0940      1.0190      171.00    363.0436    378.2560    -15.2124       0.00412624
+    1.0940      1.0190      159.00      1.0940      1.0190      166.00    774.2016    816.4974    -42.2958       0.00412624
+    1.0940      1.0590      180.00      1.0940      1.0190      159.00  -5254.3465  -5312.2174     57.8709       0.00412624
+    1.0940      1.0590      178.00      1.0940      1.0590      180.00     11.9567     11.9925     -0.0358       0.00412624
+    1.0940      1.0590      175.00      1.0940      1.0590      178.00     62.7399     63.0637     -0.3238       0.00412624
+    1.0940      1.0590      171.00      1.0940      1.0590      175.00    167.3674    168.9527     -1.5853       0.00412624
+    1.0940      1.0590      166.00      1.0940      1.0590      171.00    343.8396    349.8425     -6.0029       0.00412624
+    1.0940      1.0590      159.00      1.0940      1.0590      166.00    733.2690    751.8226    -18.5536       0.00412624
+    1.0940      1.0890      180.00      1.0940      1.0590      159.00  -2550.1089  -2576.4085     26.2996       0.00412624
+    1.0940      1.0890      178.00      1.0940      1.0890      180.00     11.4465     11.4344      0.0121       0.00412624
+    1.0940      1.0890      175.00      1.0940      1.0890      178.00     60.0843     60.0572      0.0271       0.00412624
+    1.0940      1.0890      171.00      1.0940      1.0890      175.00    160.2771    160.3665     -0.0894       0.00412624
+    1.0940      1.0890      166.00      1.0940      1.0890      171.00    329.3189    330.2477     -0.9288       0.00412624
+    1.0940      1.0890      159.00      1.0940      1.0890      166.00    702.3046    707.2209     -4.9163       0.00412624
+    1.0940      1.1090      180.00      1.0940      1.0890      159.00  -1439.7205  -1445.5404      5.8199       0.00412624
+    1.0940      1.1090      178.00      1.0940      1.1090      180.00     11.1064     11.0840      0.0224       0.00412624
+    1.0940      1.1090      175.00      1.0940      1.1090      178.00     58.3052     58.1695      0.1357       0.00412624
+    1.0940      1.1090      171.00      1.0940      1.1090      175.00    155.5284    154.9754      0.5530       0.00412624
+    1.0940      1.1090      166.00      1.0940      1.1090      171.00    319.5600    317.9446      1.6153       0.00412624
+    1.0940      1.1090      159.00      1.0940      1.1090      166.00    681.5308    679.2165      2.3143       0.00412624
+    1.0940      1.1290      180.00      1.0940      1.1090      159.00   -965.3908   -960.6121     -4.7787       0.00412624
+    1.0940      1.1290      178.00      1.0940      1.1290      180.00     10.7662     10.7499      0.0163       0.00412624
+    1.0940      1.1290      175.00      1.0940      1.1290      178.00     56.5130     56.3700      0.1429       0.00412624
+    1.0940      1.1290      171.00      1.0940      1.1290      175.00    150.7536    149.8363      0.9173       0.00412624
+    1.0940      1.1290      166.00      1.0940      1.1290      171.00    309.7487    306.2165      3.5322       0.00412624
+    1.0940      1.1290      159.00      1.0940      1.1290      166.00    660.6524    652.5210      8.1315       0.00412624
+    1.0940      1.1590      180.00      1.0940      1.1290      159.00   -105.4516    -93.1609    -12.2907       0.00412624
+    1.0940      1.1590      178.00      1.0940      1.1590      180.00     10.2430     10.2779     -0.0350       0.00412624
+    1.0940      1.1590      175.00      1.0940      1.1590      178.00     53.8051     53.8273     -0.0222       0.00412624
+    1.0940      1.1590      171.00      1.0940      1.1590      175.00    143.5325    142.5744      0.9581       0.00412624
+    1.0940      1.1590      166.00      1.0940      1.1590      171.00    294.9533    289.6438      5.3094       0.00412624
+    1.0940      1.1590      159.00      1.0940      1.1590      166.00    629.1124    614.7982     14.3142       0.00412624
+    1.0940      1.1990      180.00      1.0940      1.1590      159.00   1343.7530   1359.2231    -15.4701       0.00412624
+    1.0940      1.1990      178.00      1.0940      1.1990      180.00      9.5496      9.6990     -0.1494       0.00412624
+    1.0940      1.1990      175.00      1.0940      1.1990      178.00     50.1684     50.7088     -0.5404       0.00412624
+    1.0940      1.1990      171.00      1.0940      1.1990      175.00    133.8259    133.6683      0.1576       0.00412624
+    1.0940      1.1990      166.00      1.0940      1.1990      171.00    275.0298    269.3189      5.7109       0.00412624
+    1.0940      1.1990      159.00      1.0940      1.1990      166.00    586.7669    568.5346     18.2323       0.00412624
+    1.1140      1.0590      180.00      1.0940      1.1990      159.00  -3397.4373  -3368.8092    -28.6281       0.00412624
+    1.1140      1.0590      178.00      1.1140      1.0590      180.00     11.8259     11.8583     -0.0324       0.00412624
+    1.1140      1.0590      175.00      1.1140      1.0590      178.00     62.0858     62.3584     -0.2726       0.00412624
+    1.1140      1.0590      171.00      1.1140      1.0590      175.00    165.5752    167.0654     -1.4902       0.00412624
+    1.1140      1.0590      166.00      1.1140      1.0590      171.00    340.0721    345.9377     -5.8656       0.00412624
+    1.1140      1.0590      159.00      1.1140      1.0590      166.00    724.8967    743.3773    -18.4806       0.00412624
+    1.1140      1.0890      180.00      1.1140      1.0590      159.00  -2541.8936  -2567.7193     25.8257       0.00412624
+    1.1140      1.0890      178.00      1.1140      1.0890      180.00     11.3288     11.3103      0.0185       0.00412624
+    1.1140      1.0890      175.00      1.1140      1.0890      178.00     59.4825     59.4048      0.0777       0.00412624
+    1.1140      1.0890      171.00      1.1140      1.0890      175.00    158.6288    158.6201      0.0087       0.00412624
+    1.1140      1.0890      166.00      1.1140      1.0890      171.00    325.8392    326.6310     -0.7918       0.00412624
+    1.1140      1.0890      159.00      1.1140      1.0890      166.00    694.5602    699.3838     -4.8236       0.00412624
+    1.1140      1.1090      180.00      1.1140      1.0890      159.00  -1430.3932  -1435.8047      5.4115       0.00412624
+    1.1140      1.1090      178.00      1.1140      1.1090      180.00     10.9886     10.9662      0.0224       0.00412624
+    1.1140      1.1090      175.00      1.1140      1.1090      178.00     57.7296     57.5504      0.1792       0.00412624
+    1.1140      1.1090      171.00      1.1140      1.1090      175.00    153.9717    153.3175      0.6542       0.00412624
+    1.1140      1.1090      166.00      1.1140      1.1090      171.00    316.2634    314.5088      1.7546       0.00412624
+    1.1140      1.1090      159.00      1.1140      1.1090      166.00    674.2051    671.7612      2.4439       0.00412624
+    1.1140      1.1290      180.00      1.1140      1.1090      159.00   -956.7569   -951.5343     -5.2225       0.00412624
+    1.1140      1.1290      178.00      1.1140      1.1290      180.00     10.6616     10.6382      0.0234       0.00412624
+    1.1140      1.1290      175.00      1.1140      1.1290      178.00     55.9766     55.7826      0.1940       0.00412624
+    1.1140      1.1290      171.00      1.1140      1.1290      175.00    149.2754    148.2627      1.0127       0.00412624
+    1.1140      1.1290      166.00      1.1140      1.1290      171.00    306.6352    302.9531      3.6821       0.00412624
+    1.1140      1.1290      159.00      1.1140      1.1290      166.00    653.7060    645.4296      8.2764       0.00412624
+    1.1140      1.1590      180.00      1.1140      1.1290      159.00    -99.5518    -86.7552    -12.7966       0.00412624
+    1.1140      1.1590      178.00      1.1140      1.1590      180.00     10.1514     10.1747     -0.0233       0.00412624
+    1.1140      1.1590      175.00      1.1140      1.1590      178.00     53.3080     53.2846      0.0234       0.00412624
+    1.1140      1.1590      171.00      1.1140      1.1590      175.00    142.1851    141.1199      1.0651       0.00412624
+    1.1140      1.1590      166.00      1.1140      1.1590      171.00    292.1015    286.6241      5.4774       0.00412624
+    1.1140      1.1590      159.00      1.1140      1.1590      166.00    622.7547    608.2212     14.5335       0.00412624
+    1.1440      1.0890      180.00      1.1140      1.1590      159.00  -2002.5609  -1981.0902    -21.4707       0.00412624
+    1.1440      1.0890      178.00      1.1440      1.0890      180.00     11.1456     11.1092      0.0365       0.00412624
+    1.1440      1.0890      175.00      1.1440      1.0890      178.00     58.5406     58.3441      0.1966       0.00412624
+    1.1440      1.0890      171.00      1.1440      1.0890      175.00    156.0909    155.7519      0.3390       0.00412624
+    1.1440      1.0890      166.00      1.1440      1.0890      171.00    320.5018    320.5629     -0.0611       0.00412624
+    1.1440      1.0890      159.00      1.1440      1.0890      166.00    682.7213    685.6762     -2.9549       0.00412624
+    1.1440      1.1090      180.00      1.1440      1.0890      159.00  -1415.8202  -1417.9532      2.1330       0.00412624
+    1.1440      1.1090      178.00      1.1440      1.1090      180.00     10.8317     10.7741      0.0575       0.00412624
+    1.1440      1.1090      175.00      1.1440      1.1090      178.00     56.8400     56.5371      0.3030       0.00412624
+    1.1440      1.1090      171.00      1.1440      1.1090      175.00    151.5647    150.5756      0.9891       0.00412624
+    1.1440      1.1090      166.00      1.1440      1.1090      171.00    311.2008    308.6989      2.5018       0.00412624
+    1.1440      1.1090      159.00      1.1440      1.1090      166.00    662.9679    658.5987      4.3692       0.00412624
+    1.1440      1.1290      180.00      1.1440      1.1090      159.00   -943.2042   -934.6222     -8.5821       0.00412624
+    1.1440      1.1290      178.00      1.1440      1.1290      180.00     10.4915     10.4547      0.0368       0.00412624
+    1.1440      1.1290      175.00      1.1440      1.1290      178.00     55.1263     54.8145      0.3118       0.00412624
+    1.1440      1.1290      171.00      1.1440      1.1290      175.00    146.9992    145.6412      1.3579       0.00412624
+    1.1440      1.1290      166.00      1.1440      1.1290      171.00    301.8604    297.3894      4.4710       0.00412624
+    1.1440      1.1290      159.00      1.1440      1.1290      166.00    643.0575    632.7867     10.2708       0.00412624
+    1.1940      1.1090      180.00      1.1440      1.1290      159.00   -582.0314   -567.6784    -14.3530       0.00412624
+    1.1940      1.1090      178.00      1.1940      1.1090      180.00     10.5308     10.3640      0.1668       0.00412624
+    1.1940      1.1090      175.00      1.1940      1.1090      178.00     55.2833     54.3680      0.9153       0.00412624
+    1.1940      1.1090      171.00      1.1940      1.1090      175.00    147.3654    144.6632      2.7023       0.00412624
+    1.1940      1.1090      166.00      1.1940      1.1090      171.00    302.4491    295.9787      6.4704       0.00412624
+    1.1940      1.1090      159.00      1.1940      1.1090      166.00    643.6724    628.9626     14.7098       0.00412624
+
+
+
+   FOR ITERATION  0 OVER ALL   327 DATA POINTS USED, THE WEIGHTED STANDARD DEVIATION IS .38414E+01
+0     ************ RMS DEVIATIONS ************
+
+
+                  FOR ISOTOPE [  1, THERE ARE 117 LINES WITH AN RMS DEVIATION OF: .13447E+02
+
+                  FOR ISOTOPE [  2, THERE ARE  61 LINES WITH AN RMS DEVIATION OF: .10140E+01
+
+                  FOR   149 AB INITIO DATA POINTS, THE RMS DEVIATION IS:  .96228E+01
+
+0MORBID.TIM.INF  ENTIRE MORBID CALCULATION USED : 
+                 TOTAL CPU TIME              70.91070557 SECONDS
+                 TOTAL VECTOR TIME            0.00000000 SECONDS

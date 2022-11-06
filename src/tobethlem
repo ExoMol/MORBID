@@ -1,0 +1,2 @@
+
+gfortran -mcmodel=medium -lblas -llapack -o renner *.f

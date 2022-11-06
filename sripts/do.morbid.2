@@ -1,0 +1,8 @@
+ulimit -d 1024000
+TMPDIR=/data1/jensen/tmp1
+export TMPDIR
+cd /data1/jensen/run1
+~jensen/morbid.lapack/src/morbid <~jensen/morbid.lapack/CO2.morbid.data >~jensen/morbid.lapack/CO2.morbid.3.out   
+rm fort.*
+
+
