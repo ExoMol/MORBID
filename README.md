@@ -1,5 +1,5 @@
 # MORBID
- Calculation of rovibrational energies for a triatomic molcule in an isolated electronic state
+ Calculation of rovibrational energies for a triatomic molecule in an isolated electronic state
 
 
 Explanations:
